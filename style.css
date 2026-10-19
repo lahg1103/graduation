@@ -34,7 +34,7 @@
     --button-dimension: calc(var(--cap-dimension) / 5);
     --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
     --background-dimension: calc(var(--cap-dimension) * 2.5);
-    --bg-color: #620A0A;
+    --bg-color: #85190a;
     font-size: clamp(9px, 3vw, 20px);
 }
 body {
@@ -68,11 +68,13 @@ main {
 .main-gradient {
     --rp:10%;
     --tp:10%;
+    --degree: 90deg;
+    --gr: var(--bg-color);
     background-image: linear-gradient(transparent var(--tp), var(--bg-color) var(--rp));
     width: var(--background-dimension);
     height: 100dvh;
     z-index: 9;
-    transition:--rp 1.5s, --tp 3s;
+    transition:--rp 2s, --tp 3s, --degree 1.5s ease-in, --gr 1.5s ease-in;
     pointer-events: none;
 }
 
@@ -84,7 +86,7 @@ main {
     justify-content: center;
     height: 100dvh;
     width: var(--background-dimension);
-    background-color: #620A0A;
+    background-color: var(--bg-color);
     z-index: 9;
 }
 .cap {
@@ -155,4 +157,15 @@ canvas {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
+}
+iframe {
+    width: 100%;
+    aspect-ratio: 4/3;
+}
+
+@media (width < 600px) {
+    iframe {
+        aspect-ratio: 3/4;
+    }
+    
 }

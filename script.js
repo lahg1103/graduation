@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
             this.speedX = Math.random() * 10 - 5;
             this.speedY = Math.random() * -6 - 12; 
             
-            this.gravity = 0.3; 
+            this.gravity = 0.18; 
             this.rotation = Math.random() * 360;
             this.rotationSpeed = Math.random() * 8 - 4;
         }
