@@ -12,6 +12,23 @@
     transform: translate(-50%, 0) rotate(-360deg);
   }
 }
+@keyframes cap-down {
+    to {
+        transform: translate(0%, 200dvh);
+        opacity: 0;
+    }
+}
+@property --rp {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 10%;
+}
+@property --tp {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 10%;
+}
+
 :root {
     --cap-dimension: clamp(10px, 30vw, 300px);
     --button-dimension: calc(var(--cap-dimension) / 5);
@@ -28,22 +45,43 @@ body {
     place-items: center;
     justify-content: center;
     height: 100lvh;
-    overflow: clip;
+    overflow-x: clip;
     position: relative;
 }
-main, .cap-wrapper {
+main, .cap-wrapper, .main-gradient {
     grid-row: 1;
     grid-column: 1;
 }
 main {
     background-color: #FFFEFC;
     width: var(--background-dimension);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--button-dimension);
+    overflow-y: scroll;
+    overflow-x: clip;
+    transition: opacity 1s ease-in;
+}
+.main-gradient {
+    --rp:10%;
+    --tp:10%;
+    background-image: linear-gradient(transparent var(--tp), var(--bg-color) var(--rp));
+    width: var(--background-dimension);
+    height: 100dvh;
+    z-index: 9;
+    transition:--rp 3.5s, --tp 5s;
+    pointer-events: none;
 }
 
+
 .cap-wrapper {
-    padding-block: var(--cap-dimension);
+    padding-block: 8lvh;
     display: grid;
-    place-items: center;
+    align-items: start;
+    justify-content: center;
     height: 100dvh;
     width: var(--background-dimension);
     background-color: #620A0A;
@@ -57,6 +95,7 @@ main {
     border-radius: 2%;
     transform: rotate(45deg);
     box-shadow: var(--shadow);
+    transition: opacity 400ms;
 }
 
 .button {
@@ -89,9 +128,31 @@ main {
     height: calc(var(--cap-dimension) * 1.2);
     display: block;
 }
-.active {
-    animation: 3s infinite tassel-right-to-left;    
+.tassel.active {
+    animation: 5s tassel-right-to-left;    
+}
+.cap.active {
+    animation: 8s cap-down ease-out;
+}
+.cap-wrapper.active {
+    background-color: transparent;
+}
+.main-gradient.active {
+    --tp: 100%;
+    --rp: 90%;
+}
+.done {
+    display: none;
 }
 .hidden {
-    display: none;
+    opacity: 0;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
 }
