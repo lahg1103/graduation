@@ -72,7 +72,7 @@ main {
     width: var(--background-dimension);
     height: 100dvh;
     z-index: 9;
-    transition:--rp 3.5s, --tp 5s;
+    transition:--rp 1.5s, --tp 3s;
     pointer-events: none;
 }
 
@@ -129,10 +129,10 @@ main {
     display: block;
 }
 .tassel.active {
-    animation: 5s tassel-right-to-left;    
+    animation: 3s tassel-right-to-left;    
 }
 .cap.active {
-    animation: 8s cap-down ease-out;
+    animation: 5s cap-down ease-out;
 }
 .cap-wrapper.active {
     background-color: transparent;

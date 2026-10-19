@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
             cap.classList.toggle("hidden");
             wrapper.classList.toggle("done");
             gradient.classList.toggle("done");
-        }, 3500)
+        }, 1500)
     });
 
     const canvas = document.getElementById('confettiCanvas');
