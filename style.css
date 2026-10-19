@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Monsieur+La+Doulaise&display=swap');
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -33,7 +35,7 @@
     --cap-dimension: clamp(10px, 30vw, 300px);
     --button-dimension: calc(var(--cap-dimension) / 5);
     --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
-    --background-dimension: calc(var(--cap-dimension) * 2.5);
+    --background-dimension: 95vw;
     --bg-color: #85190a;
     font-size: clamp(9px, 3vw, 20px);
 }
@@ -57,6 +59,7 @@ main {
     width: var(--background-dimension);
     display: flex;
     flex-direction: column;
+    gap: 1.5lvh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -74,7 +77,7 @@ main {
     width: var(--background-dimension);
     height: 100dvh;
     z-index: 9;
-    transition:--rp 2s, --tp 3s, --degree 1.5s ease-in, --gr 1.5s ease-in;
+    transition:--rp 1.5s, --tp 2s, --degree 1.5s ease-in, --gr 1.5s ease-in;
     pointer-events: none;
 }
 
@@ -161,6 +164,26 @@ canvas {
 iframe {
     width: 100%;
     aspect-ratio: 4/3;
+}
+.monsieur-la-doulaise-regular {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 2.1;
+}
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+    text-transform: capitalize;
+}
+
+.date-container {
+    display: flex;
+    gap: 2vw;
 }
 
 @media (width < 600px) {
