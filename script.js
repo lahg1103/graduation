@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
     const canvas = document.getElementById('confettiCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const colors = ['rgb(237, 115, 58)', 'rgb(255, 247, 0)', 'rgb(198, 183, 138)', 'rgb(209, 209, 80)', 'rgb(244, 109, 36)', 'rgb(185, 195, 195)'];
+    const colors = ['rgb(237, 115, 58)', '#374a56', '#b34119', '#0b2240', '#00833e'];
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
