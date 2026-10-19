@@ -181,10 +181,18 @@ h1 {
     text-transform: capitalize;
 }
 
+.invite {
+    font-weight: 500;
+}
+.name {
+    font-size: 10vw;
+}
+
 .date-container {
     display: flex;
     gap: 2vw;
 }
+
 
 @media (width < 600px) {
     iframe {
