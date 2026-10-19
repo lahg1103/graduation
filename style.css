@@ -32,7 +32,7 @@
 }
 
 :root {
-    --cap-dimension: clamp(10px, 30vw, 300px);
+    --cap-dimension: clamp(10px, 40vw, 180px);
     --button-dimension: calc(var(--cap-dimension) / 5);
     --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
     --background-dimension: 95vw;
