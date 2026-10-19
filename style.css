@@ -16,17 +16,28 @@
     --cap-dimension: clamp(10px, 30vw, 300px);
     --button-dimension: calc(var(--cap-dimension) / 5);
     --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
+    --background-dimension: calc(var(--cap-dimension) * 2.5);
+    --bg-color: #620A0A;
     font-size: clamp(9px, 3vw, 20px);
 }
 body {
-    background-color: #620A0A;
+    background-color: var(--bg-color);
     display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
     place-items: center;
-    overflow-x: clip;
+    justify-content: center;
+    height: 100lvh;
+    overflow: clip;
     position: relative;
+}
+main, .cap-wrapper {
+    grid-row: 1;
+    grid-column: 1;
 }
 main {
     background-color: #FFFEFC;
+    width: var(--background-dimension);
 }
 
 .cap-wrapper {
@@ -34,6 +45,9 @@ main {
     display: grid;
     place-items: center;
     height: 100dvh;
+    width: var(--background-dimension);
+    background-color: #620A0A;
+    z-index: 9;
 }
 .cap {
     position: relative;
@@ -77,4 +91,7 @@ main {
 }
 .active {
     animation: 3s infinite tassel-right-to-left;    
+}
+.hidden {
+    display: none;
 }
