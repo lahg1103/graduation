@@ -1,0 +1,80 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@keyframes tassel-right-to-left {
+  from {
+    transform: translate(-50%, 0) rotate(-90deg);
+  }
+
+  to {
+    transform: translate(-50%, 0) rotate(-360deg);
+  }
+}
+:root {
+    --cap-dimension: clamp(10px, 30vw, 300px);
+    --button-dimension: calc(var(--cap-dimension) / 5);
+    --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
+    font-size: clamp(9px, 3vw, 20px);
+}
+body {
+    background-color: #620A0A;
+    display: grid;
+    place-items: center;
+    overflow-x: clip;
+    position: relative;
+}
+main {
+    background-color: #FFFEFC;
+}
+
+.cap-wrapper {
+    padding-block: var(--cap-dimension);
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+}
+.cap {
+    position: relative;
+    background-color: #1d1d1d;
+    height: var(--cap-dimension);
+    width: var(--cap-dimension);
+    border-radius: 2%;
+    transform: rotate(45deg);
+    box-shadow: var(--shadow);
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3c3c3c;
+    height: var(--button-dimension);
+    width: var(--button-dimension);
+    border-radius: 50%;
+    border: 1px solid #222;
+    z-index: 3;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.tassel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top center;
+    transform: translate(-50%, 0)
+               rotate(-90deg);
+    z-index: 2;
+    pointer-events: none;
+}
+.tassel img {
+    width: calc(var(--cap-dimension) / 3.5);
+    height: calc(var(--cap-dimension) * 1.2);
+    display: block;
+}
+.active {
+    animation: 3s infinite tassel-right-to-left;    
+}
