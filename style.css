@@ -37,6 +37,7 @@
     --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
     --background-dimension: 95vw;
     --bg-color: #3d1600;
+    --text-color: #140700;
     font-size: clamp(9px, 3vw, 20px);
     color:  #140700;
 }
@@ -180,28 +181,37 @@ canvas {
     z-index: 9999;
 }
 iframe {
-    width: 100%;
+    width: 85%;
     aspect-ratio: 4/3;
     filter: sepia(10%) brightness(0.95);
     border: none;
 }
+.map {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-image: url("frame-43.png");
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
 .monsieur-la-doulaise-regular {
   font-family: "Monsieur La Doulaise", cursive;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   line-height: 2.1;
 }
 .lora {
   font-family: "Lora", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 h1 {
     text-transform: capitalize;
 }
 
-.invite {
+.invite, .major {
     font-weight: 500;
 }
 .name {
@@ -210,13 +220,28 @@ h1 {
 
 .date-container {
     display: flex;
-    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+.border-top-bottom {
+    border-block: 1px solid var(--text-color);
+    padding-inline: 1.5vw;
+}
+.day {
+    font-size: 2rem;
 }
 
 
 @media (width < 600px) {
     iframe {
         aspect-ratio: 3/4;
+    }
+    .map {
+        aspect-ratio: 3/4;
+        background-image: url("frame-34.png");
+        display: grid;
+        align-items: center;
     }
     
 }
