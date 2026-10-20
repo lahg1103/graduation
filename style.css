@@ -188,12 +188,8 @@ iframe {
 .map {
     width: 100%;
     aspect-ratio: 4/3;
-    background-image: url("frame-43.png");
-    background-size: cover;
     display: grid;
     place-items: center;
-    padding-block: 8%;
-    padding-inline: 3%;
     filter: sepia(10%) brightness(0.95);
 }
 
@@ -241,9 +237,6 @@ h1 {
     }
     .map {
         aspect-ratio: 3/4;
-        background-image: url("frame-34.png");
-        display: grid;
-        align-items: center;
     }
     
 }
