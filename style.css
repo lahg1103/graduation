@@ -55,8 +55,24 @@ main, .cap-wrapper, .main-gradient {
     grid-row: 1;
     grid-column: 1;
 }
-main {
+main::after, main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+main::before {
     background-color: #faede6;
+}
+main::after {
+    background-image: url("parchment.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+main {
+    /* background-color: #faede6; */
+    position: relative;
     width: var(--background-dimension);
     display: flex;
     flex-direction: column;
@@ -166,6 +182,8 @@ canvas {
 iframe {
     width: 100%;
     aspect-ratio: 4/3;
+    filter: sepia(10%) brightness(0.95);
+    border: none;
 }
 .monsieur-la-doulaise-regular {
   font-family: "Monsieur La Doulaise", cursive;
