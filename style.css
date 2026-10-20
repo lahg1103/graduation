@@ -183,7 +183,6 @@ canvas {
 iframe {
     width: 85%;
     aspect-ratio: 4/3;
-    filter: sepia(10%) brightness(0.95);
     border: none;
 }
 .map {
@@ -195,6 +194,7 @@ iframe {
     place-items: center;
     padding-block: 8%;
     padding-inline: 3%;
+        filter: sepia(10%) brightness(0.95);
 }
 
 .monsieur-la-doulaise-regular {
