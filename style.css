@@ -193,6 +193,8 @@ iframe {
     background-size: cover;
     display: grid;
     place-items: center;
+    padding-block: 8%;
+    padding-inline: 3%;
 }
 
 .monsieur-la-doulaise-regular {
