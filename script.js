@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
     let main = document.querySelector("main");
 
 
-    cap.addEventListener("click", ()=> {
+    setTimeout(()=> {
         let tassel = cap.querySelector(".tassel");
         [wrapper, tassel, cap, gradient].forEach((e) => {
             e.classList.toggle("active");
@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
             wrapper.classList.toggle("done");
             gradient.classList.toggle("done");
         }, 1500)
-    });
+    }, 400);
 
     const canvas = document.getElementById('confettiCanvas');
     const ctx = canvas.getContext('2d');

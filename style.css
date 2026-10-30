@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Monsieur+La+Doulaise&display=swap');
-
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -30,16 +28,23 @@
   inherits: false;
   initial-value: 10%;
 }
-
+@font-face {
+    font-family: "Sloop";
+    src: url("SloopScript.woff2") format("woff2");
+}
+@font-face {
+    font-family: "texgyretermes";
+    src: url("texgyretermes.woff2") format("woff2");
+}
 :root {
     --cap-dimension: clamp(14px, 40vw, 180px);
     --button-dimension: calc(var(--cap-dimension) / 5);
     --shadow: 3px 3px 12px rgba(10, 4, 20, 0.5), inset 3px 3px 12px rgba(77, 72, 67, 0.5);
     --background-dimension: 95vw;
-    --bg-color: #3d1600;
-    --text-color: #140700;
-    font-size: clamp(9px, 3vw, 20px);
-    color:  #140700;
+    --bg-color: rgb(6, 13, 12);
+    --text-color: rgb(6, 13, 12);
+    font-size: clamp(16px, 3vw, 20px);
+    color:  rgb(6, 13, 12);
 }
 body {
     background-color: var(--bg-color);
@@ -48,7 +53,6 @@ body {
     grid-template-rows: 1;
     place-items: center;
     justify-content: center;
-    height: 100lvh;
     overflow-x: clip;
     position: relative;
 }
@@ -63,22 +67,22 @@ main::after, main::before {
     z-index: -1;
 }
 main::before {
-    background-color: #faede6;
+    background-color: rgb(240, 237, 229);
 }
 main::after {
-    background-image: url("parchment.png");
+    background-image: url("parchment.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.5;
 }
 main {
-    /* background-color: #faede6; */
     position: relative;
+    align-self: start;
     width: var(--background-dimension);
     display: flex;
     flex-direction: column;
-    gap: 1.5lvh;
     justify-content: center;
+    gap: 1.5rem;
     align-items: center;
     text-align: center;
     padding: var(--button-dimension);
@@ -92,11 +96,11 @@ main {
     --degree: 90deg;
     --gr: var(--bg-color);
     background-image: linear-gradient(transparent var(--tp), var(--bg-color) var(--rp));
-    width: var(--background-dimension);
-    height: 100lvh;
+    width: 100vw;
+    height: 100%;
     margin-bottom: calc(env(safe-area-inset-bottom) * -1);
     z-index: 9;
-    transition:--rp 1.5s, --tp 2s, --degree 1.5s ease-in, --gr 1.5s ease-in;
+    transition:--rp 1.5s, --tp 4s, --degree 1.5s ease-in, --gr 1.5s ease-in;
     pointer-events: none;
 }
 
@@ -106,8 +110,9 @@ main {
     display: grid;
     align-items: start;
     justify-content: center;
-    height: 100dvh;
-    width: var(--background-dimension);
+    min-height: 100dvh;
+    height: 100%;
+    width: 100vw;
     background-color: var(--bg-color);
     z-index: 9;
 }
@@ -193,14 +198,14 @@ iframe {
     filter: sepia(10%) brightness(0.95);
 }
 
-.monsieur-la-doulaise-regular {
-  font-family: "Monsieur La Doulaise", cursive;
+.sloopscript {
+  font-family: "Sloop", cursive;
   font-weight: 500;
   font-style: normal;
-  line-height: 2.1;
+  line-height: 0.85;
 }
-.lora {
-  font-family: "Lora", serif;
+.texgyretermes {
+  font-family: "texgyretermes", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -220,16 +225,16 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1vw;
-}
-.border-top-bottom {
-    border-block: 1px solid var(--text-color);
-    padding-inline: 1.5vw;
+    gap: 1.75vw;
 }
 .day {
     font-size: 2rem;
+    border-left: 1px var(--bg-color) solid;
+    padding-left: 1.25vw;
 }
-
+.grad-cap, .diploma {
+    max-width: 25vw;
+}
 
 @media (width < 600px) {
     iframe {
