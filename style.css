@@ -43,7 +43,7 @@
     --background-dimension: 95vw;
     --bg-color: rgb(6, 13, 12);
     --text-color: rgb(6, 13, 12);
-    font-size: clamp(16px, 3vw, 20px);
+    font-size: clamp(20px, 3vw, 30px);
     color:  rgb(6, 13, 12);
 }
 body {
@@ -207,18 +207,15 @@ iframe {
 .texgyretermes {
   font-family: "texgyretermes", serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-}
-h1 {
-    text-transform: capitalize;
 }
 
 .invite, .major {
-    font-weight: 500;
+    font-weight: 400;
 }
 .name {
-    font-size: 10vw;
+    font-size: 15vw;
 }
 
 .date-container {
